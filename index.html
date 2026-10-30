@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="dawn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="跟著Sleeping老師一起好奇，學習探究理化">
+  <title>Sleeping老師理化教學島</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript><div class="noscript">本網站需要開啟 JavaScript 才能使用 3D 群島與互動功能。下方文字清單仍可閱讀。</div></noscript>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span><div><h1>Sleeping老師理化教學島</h1><p>跟著Sleeping老師一起好奇，學習探究理化</p></div></div>
+    <div class="top-actions"><button class="icon-btn" id="soundBtn" aria-label="開啟背景音樂">♫</button><button class="icon-btn" id="helpBtn" aria-label="開啟小嚮導">?</button><button class="avatar-btn" id="profileBtn">建立冒險者</button></div>
+  </header>
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+  <main class="app-shell">
+    <section class="scene-wrap" aria-label="3D 理化群島場景">
+      <div id="scene" class="scene"></div>
+      <div class="cinema-title" id="cinemaTitle"><span>Sleeping老師</span><strong>理化教學島</strong></div>
+      <div class="scene-hud">
+        <div class="status-chip"><span id="timeIcon">☀️</span><span id="timeLabel">白天 12:00</span></div><div class="status-chip"><span>⚑</span><span id="progressLabel">探索 0 / 6</span></div><div class="status-chip"><span>✦</span><span id="expLabel">Lv1 · 0 EXP</span></div>
+      </div>
+      <div class="scene-tools"><button id="skipIntro" class="small-btn">跳過開場</button><button id="resetView" class="small-btn">回到全景</button><button id="qualityBtn" class="small-btn">低畫質</button><button id="motionBtn" class="small-btn">減少動態</button></div>
+      <div class="webgl-fallback" id="webglFallback"><h2>文字清單模式</h2><p>目前瀏覽器無法啟用 3D，仍可從下方清單閱讀全部內容。</p></div>
+    </section>
+    <aside class="control-panel" aria-label="網站控制面板">
+      <div class="panel-section theme-section"><div class="section-title"><span>場景設定</span><span class="section-hint">會記住選擇</span></div><div class="theme-buttons" id="themeButtons"><button data-theme="auto">🌅 自動</button><button data-theme="dawn">晨光</button><button data-theme="mist">海霧</button><button data-theme="night">夜海</button></div><div class="time-buttons" id="timeButtons"><button data-time="day">☀️ 白天</button><button data-time="dusk">🌇 黃昏</button><button data-time="night">🌙 夜晚</button><button data-time="auto">⏱ 自動</button><button data-time="realtime">⌚ 現在</button></div></div>
+      <div class="panel-section search-section"><label for="searchInput">搜尋島嶼與內容</label><input id="searchInput" type="search" placeholder="例如：光、訂正、實驗室"><div class="search-results" id="searchResults"></div></div>
+      <div class="panel-section list-section"><div class="section-title"><span>地點清單</span><span class="section-hint">點選即可前往</span></div><div id="islandList" class="island-list"></div></div>
+      <div class="panel-section quick-section"><button class="outline-btn" id="bagBtn">🎒 背包 <span id="bagLabel">🐚 3</span></button><button class="outline-btn" id="passportBtn">⚑ 島章護照</button><button class="outline-btn" id="saveBtn">↗ 接關碼</button><button class="outline-btn" id="certificateBtn">▧ 完成證書</button></div>
+    </aside>
+  </main>
+  <section class="content-drawer" id="contentDrawer" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow" id="drawerGroup">課程島</span><h2 id="drawerTitle">島嶼內容</h2></div><button class="close-btn" id="closeDrawer" aria-label="關閉內容">×</button></div><div class="drawer-body"><p class="drawer-intro" id="drawerIntro"></p><div class="tabs" id="drawerTabs"><button class="active" data-tab="lesson">教材</button><button data-tab="worksheet">學習單</button><button data-tab="quiz">隨堂測驗</button><button data-tab="resident">島民</button></div><div id="drawerContent"></div></div></section>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-btn" id="closeModal">×</button><h2 id="modalTitle"></h2><div id="modalBody"></div></section></div>
+  <footer class="footer"><span>內容中的「示意」為待教師補入的示範內容。</span><button id="plainListBtn">開啟完整文字清單</button></footer>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
